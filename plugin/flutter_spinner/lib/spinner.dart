@@ -108,7 +108,7 @@ class SpinnerState extends State<Spinner> with TickerProviderStateMixin{
   Widget build(BuildContext context) {
     Widget currentBox = Listener(
         behavior: HitTestBehavior.opaque,
-        onPointerUp: (event) {
+        onPointerDown: (event) {
           handleTap();
         },
         child: Align(
@@ -182,7 +182,7 @@ class SpinnerState extends State<Spinner> with TickerProviderStateMixin{
   OverlayEntry get overlayEntryBg => OverlayEntry(builder: (context) => Listener(
       child: Material(color: Colors.transparent),
       behavior: HitTestBehavior.opaque,
-      onPointerUp: (event) {
+      onPointerDown: (event) {
         if (_linkageId != -1)
           return;
         if (null != widget.id){
